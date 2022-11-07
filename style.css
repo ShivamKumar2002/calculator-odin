@@ -34,6 +34,13 @@ body {
     border-bottom: 1px solid #1C2335;
     height: 120px;
     background: #dee3f3;
+    font-size: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .buttons-container {
@@ -114,4 +121,8 @@ body {
 .btn-red:active {
     color: white;
     background-color: #60135c;
+}
+
+#liveResult {
+    font-size: 16px;
 }

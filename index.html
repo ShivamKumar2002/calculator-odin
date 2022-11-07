@@ -14,13 +14,16 @@
 <div class="header">Calculator</div>
 <div class="container">
 
-    <div id="screen"></div>
+    <div id="screen">
+        <div id="liveResult">1234</div>
+        <div id="inputArea">567899</div>
+    </div>
 
     <div class="buttons-container">
 
         <div class="btn-row">
-            <button class="btn btn-wide btn-red">AC</button>
-            <button class="btn">C</button>
+            <button class="btn btn-wide btn-red" id="clearAllBtn">AC</button>
+            <button class="btn" id="deleteBtn">C</button>
             <button class="btn operator">÷</button>
         </div>
 
@@ -28,7 +31,7 @@
             <button class="btn">7</button>
             <button class="btn">8</button>
             <button class="btn">9</button>
-            <button class="btn operator">×</button>
+            <button class="btn operator">*</button>
         </div>
 
         <div class="btn-row">
@@ -48,7 +51,7 @@
         <div class="btn-row">
             <button class="btn">0</button>
             <button class="btn">.</button>
-            <button class="btn btn-wide operator">=</button>
+            <button class="btn btn-wide operator" id="calculateBtn">=</button>
         </div>
 
     </div>
