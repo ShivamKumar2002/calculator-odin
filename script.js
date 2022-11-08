@@ -3,9 +3,8 @@ const operators = ["+", "-", "*", "/"];
 const liveResultDiv = document.getElementById("liveResult");
 const inputAreaDiv = document.getElementById("inputArea");
 const inputButtons = document.querySelectorAll(".num-btn, .operator");
+const calculateBtn = document.getElementById("calculateBtn");
 
-
-let lastResult = "";
 let stack = [];
 
 
@@ -50,6 +49,8 @@ inputButtons.forEach(function (element) {
     });
 });
 
+calculateBtn.addEventListener("click", showResult);
+
 function handleNumButtonClick(element) {
     let input = element.textContent;
 
@@ -59,7 +60,7 @@ function handleNumButtonClick(element) {
         stack.push(input);
     }
 
-    lastResult = calculateResult(stack);
+    let lastResult = calculateResult(stack);
     updateScreen(lastResult);
 }
 
@@ -97,4 +98,19 @@ function updateScreen(result) {
     if (!(inputText === resultText)) {
         liveResultDiv.textContent = resultText;
     }
+}
+
+
+function showResult() {
+    let finalResult = calculateResult(stack);
+    inputAreaDiv.textContent = finalResult;
+    liveResultDiv.textContent = "";
+    addResultToStack(finalResult);
+}
+
+
+function addResultToStack(result) {
+    let numbers = result.toString().split("");
+    stack = [];
+    numbers.forEach(value => stack.push(parseInt(value)));
 }
