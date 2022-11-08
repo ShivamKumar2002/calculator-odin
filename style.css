@@ -126,3 +126,7 @@ body {
 #liveResult {
     font-size: 16px;
 }
+
+.multiply-operator {
+    padding-top: 15px;
+}
