@@ -85,16 +85,16 @@ body {
     color: white;
 }
 
-.operator {
+.operator, #calculateBtn {
     background: #c5d0ef;
 }
 
-.operator:hover {
+.operator:hover, #calculateBtn:hover {
     background-color: #3D4760;
     color: #c5d0ef;
 }
 
-.operator:active {
+.operator:active, #calculateBtn:active {
     color: white;
     background-color: #151c2d;
 }
