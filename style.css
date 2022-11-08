@@ -81,7 +81,6 @@ body {
 }
 
 .btn:active {
-    border-radius: 25%;
     background-color: #393960;
     color: white;
 }
@@ -104,10 +103,6 @@ body {
     width: 180px;
     height: 80px;
     border-radius: 80px;
-}
-
-.btn-wide:active {
-    border-radius: 15px;
 }
 
 .btn-red {
