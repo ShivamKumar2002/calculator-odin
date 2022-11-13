@@ -96,8 +96,15 @@ function calculateResult(arr) {
     }
 
     let operatorIndex = arr.findIndex(value => operators.includes(value));
+
     let firstNum = parseFloat(arr.slice(0, operatorIndex).join(""));
+
+    if (operatorIndex === (arr.length - 1)) {
+        return firstNum;
+    }
+
     let secondNum = calculateResult(arr.slice(operatorIndex + 1));
+
     let currentOperator = arr[operatorIndex];
 
     return operate(firstNum, secondNum, currentOperator);
