@@ -126,7 +126,13 @@ function showResult() {
 function addResultToStack(result) {
     let numbers = result.toString().split("");
     stack = [];
-    numbers.forEach(value => stack.push(parseFloat(value)));
+    numbers.forEach(function (value) {
+        if (value === ".") {
+            stack.push(".");
+        } else {
+            stack.push(parseFloat(value));
+        }
+    });
 }
 
 
