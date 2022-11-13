@@ -91,7 +91,7 @@ function calculateResult(arr) {
     let secondNum = calculateResult(arr.slice(operatorIndex + 1));
     let currentOperator = arr[operatorIndex];
 
-    return operate(firstNum, secondNum, currentOperator).toFixed(10);
+    return operate(firstNum, secondNum, currentOperator);
 }
 
 
