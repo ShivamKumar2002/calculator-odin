@@ -66,6 +66,16 @@ function handleInput(input) {
         }
     }
 
+    if (stack.length === 0) {
+        if (operators.includes(input) && input !== "-" && input !== "+") {
+            return false;
+        }
+    }
+
+    if (operators.includes(input) && operators.includes(stack.at(-1))) {
+        stack.pop();
+    }
+
     if (!isNaN(input)) {
         stack.push(parseFloat(input));
     } else {
