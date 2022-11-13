@@ -47,7 +47,7 @@ function operate(a, b, operator) {
 
 inputButtons.forEach(function (element) {
     element.addEventListener("click", function () {
-        handleNumButtonClick(element);
+        handleInput(element.textContent);
     });
 });
 
@@ -59,8 +59,7 @@ deleteBtn.addEventListener("click", deleteNumber);
 clearAllBtn.addEventListener("click", clearAll);
 
 
-function handleNumButtonClick(element) {
-    let input = element.textContent;
+function handleInput(input) {
     if (input === ".") {
         if (!shouldAllowDot()) {
             return false;
@@ -163,3 +162,22 @@ function shouldAllowDot() {
 
     return lastOperatorIndex === -1 || !stack.slice(lastOperatorIndex + 1).includes(".");
 }
+
+
+document.addEventListener("keydown", function (e) {
+    e.preventDefault();
+
+    if (e.key === " ") {
+        return false;
+    }
+
+    if (!isNaN(e.key) || operators.includes(e.key) || e.key === ".") {
+        handleInput(e.key);
+    } else if (e.key === "Backspace" || e.key === "Delete") {
+        deleteNumber();
+    } else if (e.key === "Enter") {
+        showResult();
+    }
+
+    return false;
+});
