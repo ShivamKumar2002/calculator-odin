@@ -119,7 +119,7 @@ function updateScreen(result) {
     let resultText = parseResult(result);
 
     if (!(inputText === resultText)) {
-        liveResultDiv.textContent = resultText;
+        updateLiveResult(resultText);
     }
 }
 
@@ -127,7 +127,7 @@ function updateScreen(result) {
 function showResult() {
     let finalResult = calculateResult(stack);
     inputAreaDiv.textContent = finalResult;
-    liveResultDiv.textContent = "";
+    updateLiveResult("");
     addResultToStack(finalResult);
 }
 
@@ -155,7 +155,8 @@ function deleteNumber() {
 function clearAll() {
     stack = [];
     inputAreaDiv.textContent = "";
-    liveResultDiv.textContent = "";
+
+    updateLiveResult("");
 }
 
 
@@ -191,3 +192,12 @@ document.addEventListener("keydown", function (e) {
 
     return false;
 });
+
+
+function updateLiveResult(content) {
+    if (content === "NaN") {
+        liveResultDiv.textContent = "";
+    } else {
+        liveResultDiv.textContent = content;
+    }
+}
