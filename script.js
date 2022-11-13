@@ -102,6 +102,10 @@ function calculateResult(arr) {
 
     let firstPart = calculateResult(arr.slice(0, operatorIndex));
 
+    if (operators.includes(reversedArr[0])) {
+        return firstPart;
+    }
+
     let secondPart = parseFloat(arr.slice(operatorIndex + 1).join(""));
 
     let currentOperator = arr[operatorIndex];
