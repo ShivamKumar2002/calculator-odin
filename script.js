@@ -91,23 +91,22 @@ function calculateResult(arr) {
     if (arr.length === 0) {
         return 0;
     }
+
     if (!arr.some(value => operators.includes(value))) {
         return parseFloat(arr.join(""));
     }
 
-    let operatorIndex = arr.findIndex(value => operators.includes(value));
+    let reversedArr = arr.slice().reverse();
 
-    let firstNum = parseFloat(arr.slice(0, operatorIndex).join(""));
+    let operatorIndex = arr.length - reversedArr.findIndex(value => operators.includes(value)) - 1;
 
-    if (operatorIndex === (arr.length - 1)) {
-        return firstNum;
-    }
+    let firstPart = calculateResult(arr.slice(0, operatorIndex));
 
-    let secondNum = calculateResult(arr.slice(operatorIndex + 1));
+    let secondPart = parseFloat(arr.slice(operatorIndex + 1).join(""));
 
     let currentOperator = arr[operatorIndex];
 
-    return operate(firstNum, secondNum, currentOperator);
+    return operate(firstPart, secondPart, currentOperator);
 }
 
 
