@@ -1,4 +1,3 @@
-
 # Odin Calculator
 
 This is a simple Calculator project I made while doing TheOdinProject Foundations Course.
@@ -21,9 +20,11 @@ It has two parts in screen, top row which shows live result in small font, and m
 ## Demo
 
 https://shivamkumar2002.github.io/calculator-odin/
+
+
 ## Screenshots
 
-![Screenshot](screenshot.png)
+<img src="screenshot.png" style="height: 633px; width: 292px;" alt="Calculator Screenshot">
 
 
 ## Features
@@ -49,6 +50,7 @@ HTML, CSS, JavaScript, DOM Manipulation, JavaScript Events
 - [@ShivamKumar2002](https://www.github.com/ShivamKumar2002)
 - [@RaghavKumar09](https://www.github.com/RaghavKumar09)
 
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
@@ -57,4 +59,3 @@ HTML, CSS, JavaScript, DOM Manipulation, JavaScript Events
 ## Contributing
 
 Contributions are always welcome! Open a pull request or issue :)
-
