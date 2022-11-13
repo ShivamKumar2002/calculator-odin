@@ -155,9 +155,11 @@ function shouldAllowDot() {
         return true;
     }
 
-    let lastOperatorIndex = stack.length - stack.slice().reverse().findIndex(value => operators.includes(value)) - 1;
-
-    if (lastOperatorIndex !== -1 && stack.slice(lastOperatorIndex).includes(".")) {
+    if (stack.at(-1) === ".") {
         return false;
     }
+
+    let lastOperatorIndex = stack.length - stack.slice().reverse().findIndex(value => operators.includes(value)) - 1;
+
+    return lastOperatorIndex === -1 || !stack.slice(lastOperatorIndex + 1).includes(".");
 }
