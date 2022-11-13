@@ -207,6 +207,8 @@ document.addEventListener("keydown", function (e) {
 function updateLiveResult(content) {
     if (content === "NaN") {
         liveResultDiv.textContent = "";
+    } else if (content === "Infinity") {
+        liveResultDiv.textContent = "Result is Infinity. Can you handle it?"
     } else {
         liveResultDiv.textContent = content;
     }
